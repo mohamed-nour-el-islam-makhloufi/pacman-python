@@ -1,0 +1,89 @@
+python pacman.py
+# تشغيل لعبة Pacman بالوضع الافتراضي (layout والوكلاء الأساسيين).
+
+python pacman.py --layout testMaze --pacman GoWestAgent
+# تشغيل Pacman في متاهة "testMaze" باستخدام وكيل بسيط يتحرك دائمًا غربًا (GoWestAgent).
+
+python pacman.py --layout tinyMaze --pacman GoWestAgent
+# تشغيل Pacman في متاهة صغيرة "tinyMaze" باستخدام وكيل GoWestAgent.
+
+python pacman.py -h
+# عرض المساعدة (help) لخيارات التشغيل المتاحة في pacman.py.
+
+python pacman.py -l tinyMaze -p SearchAgent -a fn=tinyMazeSearch
+# تشغيل Pacman في متاهة tinyMaze باستخدام SearchAgent الذي يستخدم دالة tinyMazeSearch لحل المتاهة.
+
+python pacman.py -l tinyMaze -p SearchAgent
+# تشغيل Pacman في tinyMaze باستخدام SearchAgent (افتراضيًا يستخدم depthFirstSearch إذا لم يتم تحديد fn).
+
+
+python pacman.py -l mediumMaze -p SearchAgent
+# تشغيل Pacman في متاهة mediumMaze باستخدام SearchAgent مع خوارزمية البحث الافتراضية.
+
+
+python pacman.py -l bigMaze -z .5 -p SearchAgent
+# تشغيل Pacman في متاهة كبيرة "bigMaze"، بسرعة أبطأ (0.5x)، باستخدام SearchAgent.
+
+
+python pacman.py -l mediumMaze -p SearchAgent -a fn=bfs
+# استخدام SearchAgent في mediumMaze مع خوارزمية البحث بالعرض (Breadth-First Search).
+
+
+python pacman.py -l bigMaze -p SearchAgent -a fn=bfs -z .5
+# تشغيل Pacman في bigMaze باستخدام BFS بسرعة أبطأ (0.5x).
+
+
+python eightpuzzle.py
+# تشغيل لعبة الـ 8-Puzzle (أحجية تحريك القطع) بشكل مستقل.
+
+
+python pacman.py -l mediumMaze -p SearchAgent -a fn=ucs
+# تشغيل Pacman في mediumMaze باستخدام خوارزمية Uniform Cost Search (UCS).
+
+
+python pacman.py -l mediumDottedMaze -p StayEastSearchAgent
+# تشغيل Pacman في متاهة mediumDottedMaze باستخدام وكيل StayEast الذي يفضل البقاء في الجهة الشرقية.
+
+
+
+python pacman.py -l mediumScaryMaze -p StayWestSearchAgent
+# تشغيل Pacman في متاهة "mediumScaryMaze" مع وكيل StayWest الذي يفضل الاتجاه نحو الغرب.
+
+python pacman.py -l bigMaze -z .5 -p SearchAgent -a fn=astar,heuristic=manhattanHeuristic 
+# تشغيل Pacman في bigMaze باستخدام A* مع heuristic المسافة Manhattan، بسرعة أبطأ.
+
+
+python pacman.py -l tinyCorners -p SearchAgent -a fn=bfs,prob=CornersProblem
+# حل مشكلة الزوايا CornersProblem في متاهة tinyCorners باستخدام BFS.
+
+
+python pacman.py -l mediumCorners -p SearchAgent -a fn=bfs,prob=CornersProblem
+# حل CornersProblem في mediumCorners باستخدام BFS.
+
+
+
+python pacman.py -l mediumCorners -p AStarCornersAgent -z 0.5
+# حل CornersProblem في mediumCorners باستخدام وكيل A* مع سرعة عرض أبطأ.
+
+
+
+python pacman.py -l testSearch -p AStarFoodSearchAgent
+# تشغيل Pacman في "testSearch" مع A* لحل مشكلة جمع الطعام (FoodSearchProblem).
+
+
+
+python pacman.py -l trickySearch -p AStarFoodSearchAgent
+# تشغيل A* في متاهة أكثر تعقيدًا لجمع الطعام (trickySearch).
+
+
+
+python pacman.py -l bigSearch -p ClosestDotSearchAgent -z .5 
+# تشغيل Pacman في bigSearch حيث يتحرك نحو أقرب نقطة طعام (ClosestDot)، بسرعة بطيئة.
+
+
+
+python pacman.py -l bigSearch -p ApproximateSearchAgent -z .5 -q 
+# استخدام وكيل تقريبي (ApproximateSearchAgent) في متاهة كبيرة، بسرعة أبطأ، بدون طباعة (quiet mode).
+
+
+
